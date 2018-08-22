@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/libft.h"
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -22,4 +22,19 @@ char	*ft_strdup(const char *s)
 	if (new == NULL)
 		return (NULL);
 	return ((char *)ft_memcpy(new, s, len));
+}
+
+char	*ft_strndup(const char *s, size_t n)
+{
+	char	*snew;
+
+	if (!(snew = (char *)malloc(sizeof(char) * (n + 1))))
+		return (NULL);
+	snew[n] = '\0';
+	return (ft_strncpy(snew, s, n));
+}
+
+char	*ft_strmdup(const char *a, size_t n)
+{
+	return (ft_strndup(a, ft_strlen(a) + n));
 }

@@ -6,11 +6,11 @@
 /*   By: rmdaba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 13:21:51 by rmdaba            #+#    #+#             */
-/*   Updated: 2018/05/28 14:32:27 by rmdaba           ###   ########.fr       */
+/*   Updated: 2018/07/19 01:59:22 by rmdaba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/libft.h"
+#include "libft.h"
 
 static long		ft_chk_o(long *nbr, int neg)
 {

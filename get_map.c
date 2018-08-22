@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmdaba <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: rmdaba <rmdaba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 08:30:39 by rmdaba            #+#    #+#             */
-/*   Updated: 2018/07/19 08:35:02 by rmdaba           ###   ########.fr       */
+/*   Updated: 2018/08/22 08:31:06 by rmdaba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "fdf.h"
 
 /*
- **This function takes an array and counts how many tokens ca be created in the
- **int array to be created;
- **
- **It checks whether a chararcter is a valid character and not a space or non-
- **printable and if te next one is vise versa, which guarantees a count only if
- **next character is a space, well, in most these maps
+**This function takes an array and counts how many tokens ca be created in the
+**int array to be created;
+**
+**It checks whether a chararcter is a valid character and not a space or non-
+**printable and if te next one is vise versa, which guarantees a count only if
+**next character is a space, well, in most these maps
 */
 
 int		cont_count(char *line)
@@ -38,12 +38,12 @@ int		cont_count(char *line)
 }
 
 /*
- **-->  int		line_count(char *file) 1. takes the file passed as argv[1]
- **2. Opens the file in read only mode and gets the file descriptor if files
- **ws correctly opened
- **3. Gets all the lines in the file while there are still lines
- **4. Uses (i) to count everytime I read a newline and returns (i) which will
- **give us information about how many line we have for correct mallocing
+**-->  int		line_count(char *file) 1. takes the file passed as argv[1]
+**2. Opens the file in read only mode and gets the file descriptor if files
+**ws correctly opened
+**3. Gets all the lines in the file while there are still lines
+**4. Uses (i) to count everytime I read a newline and returns (i) which will
+**give us information about how many line we have for correct mallocing
 */
 
 int		line_count(char *file)
@@ -96,17 +96,17 @@ char	**get_map(int fd, char *file)
 }
 
 /*
- **---> int		*split_tab(char *arr) just splits a string and return an int
- **pointer or rather array
- **1. Get the string
- **2. Create an **array which will save the split string from ft_strsplit which
- **kind of works like strok except it tokenizes the entire string into a double
- **pointer array of chararcter pointers
- **3. Create an int array to save our intergers and allocate it the size of the
- **number of tokens per line in our file (remember cont_count?).
- **4. go through the split array and change every token into an integer with my
- **famous ft_atoi(man atoi) and saves it in my tab int array;
- **5. Returns the int pointe to array tab;
+**---> int		*split_tab(char *arr) just splits a string and return an int
+**pointer or rather array
+**1. Get the string
+**2. Create an **array which will save the split string from ft_strsplit which
+**kind of works like strok except it tokenizes the entire string into a double
+**pointer array of chararcter pointers
+**3. Create an int array to save our intergers and allocate it the size of the
+**number of tokens per line in our file (remember cont_count?).
+**4. go through the split array and change every token into an integer with my
+**famous ft_atoi(man atoi) and saves it in my tab int array;
+**5. Returns the int pointe to array tab;
 */
 
 int		*split_tab(char *arr)
@@ -128,21 +128,21 @@ int		*split_tab(char *arr)
 }
 
 /*
- **--->  t_stuff	*tab_map(int fd, char *file)
- **Noow this function takes the valid file descriptor fd and the file passed and
- **a nice structure that has a 2D int pointer, line count from our file and
- **token counter from our file.
- **1. Get the map with get_map function above and save it to map
- **2. Mallocsa a structure pointed my (m)
- **3. Initialize every value to zero in the structure (VERY GOOD PRACTICE)
- **4. Malloc the 2D int pointer to size of the number of our lines (len)
- **5, Assignes each one of these pointers the int converted version of each line
- **in map by the split_tab function above
- **6. inctiments lin_len as i increases to have token sizes to lin_len
- **7. Returns the pointer to the strucure
- **
- **HORAY, NOW THERES A 2D ARRAY OF INTS FOR BETTER SOLVING AND MANIPULATION
- **PUTING PIXELS '(*._.*)'
+**--->  t_stuff	*tab_map(int fd, char *file)
+**Noow this function takes the valid file descriptor fd and the file passed and
+**a nice structure that has a 2D int pointer, line count from our file and
+**token counter from our file.
+**1. Get the map with get_map function above and save it to map
+**2. Mallocsa a structure pointed my (m)
+**3. Initialize every value to zero in the structure (VERY GOOD PRACTICE)
+**4. Malloc the 2D int pointer to size of the number of our lines (len)
+**5, Assignes each one of these pointers the int converted version of each line
+**in map by the split_tab function above
+**6. inctiments lin_len as i increases to have token sizes to lin_len
+**7. Returns the pointer to the strucure
+**
+**HORAY, NOW THERES A 2D ARRAY OF INTS FOR BETTER SOLVING AND MANIPULATION
+**PUTING PIXELS '(*._.*)'
 */
 
 t_stuff	*tab_map(int fd, char *file)
